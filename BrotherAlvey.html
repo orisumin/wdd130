@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brother Alvey Portal Page</title>
+    <link href="/styles/styles.css" rel="stylesheet">
+</head>
+<body>
+    <div id="wrapper">
+        <header>
+            <img src="images/logo.png" width="150" alt="Site logo">
+            <h1>Brother Alvey's Portal Page</h1>
+        </header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="wwr/">WWR</a></li>
+                <li><a href="ice/">ICE</a></li>
+                <li><a href="#">Project</a></li>
+            </ul>
+        </nav>
+        <main>
+            <section><a href = "wwr/"><img src="images/wwr.jpg"></a></section>
+            <section><a href = "ice/"><img src="images/ice.jpg"></a></section>
+            <section><a href = "#"><img src="images/projects.jpg"></a></section>
+            <section>
+                <table class="blueTable" border="1">
+                    <thead>
+                        <tr>
+                        <th>Pioneer Name</th>
+                        <th>Invention</th>
+                        <th>Fun Fact</th>
+                        </tr>
+                    </thead>
+                    <tr>
+                    <td>Sir Tim Berners-Lee</td>
+                    <td>WWW, HTTP, HTML, URL</td>
+                    <td>He was knight by the Queen herself</td>
+                    </tr>
+                    <tr>
+                    <td>Vint Cerf</td>
+                    <td>Internet, TCP/IP</td>
+                    <td>Always wears a 3-piece suit</td>
+                    </tr>
+                    <tr>
+                    <td>Bob Kahn</td>
+                    <td>Internet, TCP/IP</td>
+                    <td>Boring</td>
+                    </tr>
+                    <tr>
+                    <td>Marc Andreessen</td>
+                    <td>Browser</td>
+                    <td>Head shaped like an Egg</td>
+                    </tr>
+                </table>
+            </section>
+        </main>
+        <footer>
+            <p>&copy; Alvey</p>
+
+            <div id="contact">
+                <form action="#" method="post">
+                    <!-- Name -->
+                    <label for="name">Name:</label><br>
+                    <input type="text" id="name" name="name" required><br><br>
+
+                    <!-- Email -->
+                    <label for="email">Email:</label><br>
+                    <input type="email" id="email" name="email" required><br><br>
+
+                    <!-- Message -->
+                    <label for="message">Message:</label><br>
+                    <textarea id="message" name="message" rows="4" cols="20" required></textarea><br><br>
+
+                    <!-- Newsletter Checkbox -->
+                     <div class = "stretch">
+                        <input type="checkbox" id="newsletter" name="newsletter" value="yes">
+                        <label for="newsletter">Subscribe to our newsletter</label><br><br>
+                    </div>
+
+                    <!-- Submit Button -->
+                    <button type="submit">Submit</button>
+                </form>
+            </div>
+            
+        </footer>
+    </div>
+    
+</body>
+</html>

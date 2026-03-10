@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daily Feed Sign Up</title>
+
+    <style>
+        * {
+            margin: 0;
+        }
+
+        body {
+            background: rgb(120, 96, 64);
+            text-align: center;
+            font-family: 'Times New Roman', Times, serif;
+
+        }
+        #formContainer{
+            display: grid;
+            grid-template-columns: 1fr 1fr ;
+            grid-template-rows: 3fr 1fr 5fr 1fr;
+            text-align: center;
+            width: 440px;
+            height: 700px;
+            background-color: white;
+            margin: 30px auto;
+            border: 10px solid #282779;
+            border-radius: 30px;
+        }
+        #closeBtn{
+            position: relative;
+            top: -240px;
+            width: 24px;
+            height: 20px;
+            text-align: center;
+        } 
+        h2{
+            grid-column: 1/3;
+            grid-row: 1/2;
+            background-image: url(/ice/signup/images/jesus_feeds_5000.jpeg);
+            background-size: cover;
+            border-radius: 20px 20px 0 0 ;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            padding: 10px;
+            color: white;
+            text-shadow:black 2px 1px;
+                        
+        }
+        h3{
+            grid-column: 1/3;
+            grid-row: 2/3;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;    
+            height: 50px;   
+        }
+        #myForm{
+            grid-column: 1/3;
+            grid-row: 3/4;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin: 0 10px 10px 10px;
+        }
+        #myForm label{
+            grid-column: 1/2;
+        }
+        .top4{
+            display: flex;
+            justify-content: left;
+            padding-left: 20px;
+        }
+        .scriptures{
+            grid-column: 1/3;
+            grid-row: 4/5;
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+            gap: 3px;
+            margin-top: 20px;
+        }
+        .scriptures img{
+            width: 86px;
+        }
+        .subs{
+            grid-column: 1/3;
+        }
+        .acknowledge{
+            grid-column: 1/3;
+        }
+        .submit{
+            grid-column: 1/3;
+        }
+        #old{
+            border-radius: 0 0 0 20px;
+        }
+        #pogp{
+            border-radius: 0 0 20px 0;
+        }
+    </style>
+
+
+
+
+</head>
+
+<body>
+    <div id="formContainer">
+        <h2>Daily Feed <br>Scripture a Day</h2>
+        <h3>Sign Up for Daily Scripture Feed</h3>
+        <form id="myForm">
+            <button type="button" id="closeBtn">X</button>
+            <label for="username" class="top4">User Name:</label>
+            <input type="text" id="username" name="username" required>
+
+            <label for="password" class="top4">Password:</label>
+            <input type="password" id="password" name="password" required>
+
+            <label for="email" class="top4">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label class="top4">Gender:</label>
+            <div>
+                <input type="radio" id="male" name="gender" value="male" required>
+                <label for="male">Male</label>
+                <input type="radio" id="female" name="gender" value="female" required>
+                <label for="female">Female</label>
+            </div>
+
+            <section class="subs">
+                <input type="checkbox" id="newsletter" name="newsletter">
+                <label for="newsletter">Subscribe to newsletter</label>
+            </section>
+
+            <section class="acknowledge">
+                <input type="checkbox" id="conditions" name="conditions" required>
+                <label for="conditions">I acknowledge the terms and conditions</label>
+            </section>
+
+            <section class="submit">
+                <button type="submit">Submit</button>
+            </section>
+        </form>
+            <section class="scriptures">
+                <img src="/ice/signup/images/old_testament.webp" id="old">
+                <img src="/ice/signup/images/new_testament.webp" id="new">
+                <img src="/ice/signup/images/book_of_mormon.webp" id="bom">
+                <img src="/ice/signup/images/doctrine_and_covenants.webp" id="dc">
+                <img src="/ice/signup/images/pearl_of_great_price.webp" id="pogp">
+            </section>
+            
+
+    </div>
+
+    <div id="output"></div>
+
+    <script>
+        // Here is some Javascript to start looking forward to wdd131
+        document.getElementById("closeBtn").addEventListener("click", function () {
+            document.getElementById("formContainer").style.display = "none";
+         });
+        const form = document.getElementById('myForm');
+        const output = document.getElementById('output');
+
+        form.addEventListener('submit', function (event) {
+            event.preventDefault(); // Stop form from actually submitting
+
+            const formData = new FormData(form);
+            const entries = [];
+
+            for (const [key, value] of formData.entries()) {
+                if (key == "password") {
+                    entries.push(`<strong>${key}</strong>: ${value} (you should probably encrypt the password)`);
+                } else {
+                    entries.push(`<strong>${key}</strong>: ${value}`);
+                }
+            }
+
+            output.innerHTML = `
+            <br>  
+            <h3>Here is the data that would be sent to the server:</h3>
+            <ul>
+                ${entries.map(item => `<li>${item}</li>`).join('')}
+            </ul>
+            `;
+                });
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Barriecito&family=Barrio&family=Gowun+Dodum&family=Quicksand:wght@300..700&display=swap');
+body{
+    background-color: #004E89; 
+}
+section {
+    height: 500px;
+    
+} 
+.aboutme{
+    background-image: url("/images/yellow\ camera.jpeg");
+
+}
+.aboutme a{
+    font-family: "Gowun Dodum", Helvetica, sans-serif;
+    
+}

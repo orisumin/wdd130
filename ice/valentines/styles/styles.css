@@ -1,0 +1,61 @@
+@import url('https://fonts.googleapis.com/css2?family=Playwrite+CU+Guides&family=Roboto+Slab:wght@100..900&family=Send+Flowers&display=swap');
+body{
+    background-color: pink;
+    font-family: "roboto slab";
+    text-align: center;
+    max-width: 1000px;
+    margin: 30px auto;
+}
+img{
+    width: 80%;
+    align-self: center;
+
+}
+
+h1, h2{
+    font-family: "Send Flowers";
+}
+h1{
+    grid-column: 1/7;
+}
+nav{
+    list-style-type:none;
+    margin-top: -30px;
+}
+nav ul{
+    display: flex;
+    list-style-type: none;
+    background-color: brown;
+    color: bisque;
+}
+nav li{
+    padding: 20px;
+
+}
+nav li:hover{
+    background-color: pink;
+    color: black;
+}
+section{
+    border-radius: 5px;
+    border: 3px solid brown;
+    margin: 30px;
+    background-color: brown;
+    color: brown;
+}
+section:hover{
+    background-color: pink;
+    border-radius: 5px;
+    margin: 30px;
+    border: 3px solid palevioletred;
+}
+p{
+    padding: 20px;
+}
+
+footer{
+    background-color: brown;
+    color: bisque;
+    padding: 30px;
+    margin-bottom: -30px;
+}
